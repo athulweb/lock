@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>🔐 Link Locker by Rootzero</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="b64.js"></script>
+  <script src="api.js"></script>
+  <script src="create.js" defer></script>
+</head>
+
+<body onload="main()">
+  <h1>🔒 Link Locker</h1>
+
+  <div class="form">
+    <input type="url" id="url" placeholder="https://your-link.com" required />
+    <input type="text" id="hint" placeholder="Hint (optional)" />
+    <input type="password" id="password" placeholder="Password" />
+    <input type="password" id="confirm-password" placeholder="Confirm Password" />
+
+    <label><input type="checkbox" id="iv" checked /> Random IV</label>
+    <label><input type="checkbox" id="salt" checked /> Random Salt</label>
+    <button onclick="onEncrypt()">Encrypt</button>
+  </div>
+
+  <div class="output">
+    <input id="output" readonly />
+    <button onclick="onCopy('output')">Copy</button>
+    <a id="open" target="_blank"><button>Open Link</button></a>
+  </div>
+
+  <footer>
+    <p>Made with 💻 by Rootzero</p>
+  </footer>
+</body>
+</html>
